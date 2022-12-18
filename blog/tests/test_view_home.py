@@ -18,6 +18,7 @@ class TestHomeView(TestCase):
     def test_posts_are_ordered_by_created_on(self):
         ...
     
-    @skip('Test is not ready')
+    # @skip('Test is not ready')
     def test_loads_correct_template(self):
-        ...
+        response = self.client.get(reverse('blog:home'))
+        self.assertTemplateUsed(response, 'blog/index.html')

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+    }
+
+    .head_text {
+        color: white;
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
+</style>
+
+{% include 'blog/partials/_header.html' %}
+
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+            {% for post in post_list %} {% include 'blog/partials/_card.html' %} {% endfor %}
+        </div>
+
+        <!-- Sidebar -->
+        {% include 'blog/partials/_sidebar.html' %}
+    </div>
+</div>
+
+{% endblock content %}
