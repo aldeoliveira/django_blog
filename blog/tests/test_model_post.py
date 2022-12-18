@@ -4,11 +4,12 @@ from django.db.utils import IntegrityError
 from django.contrib.auth.models import User
 
 from parameterized import parameterized
+from unittest import skip
 
 from blog.models import Post
 
 
-class TestModelPost(TestCase):
+class TestBlogModelPost(TestCase):
     def setUp(self) -> None:
         self.user = User.objects.create(username='test_user')
 
@@ -41,20 +42,25 @@ class TestModelPost(TestCase):
         with self.assertRaises(IntegrityError):
             self.create_post_no_defaults(**post2)
 
+    @skip('Test is not ready')
     def test_post_created_on_is_set_as_now_by_default(self):
-        pass
+        ...
 
+    @skip('Test is not ready')
     def test_post_updated_on_is_set_as_now_by_default(self):
-        pass
+        ...
 
+    @skip('Test is not ready')
     def test_post_created_on_doesnt_change_when_the_post_is_saved(self):
-        pass
+        ...
 
+    @skip('Test is not ready')
     def test_post_updated_on_changes_when_the_post_is_saved(self):
-        pass
+        ...
 
+    @skip('Test is not ready')
     def test_posts_are_ordered_by_created_on(self):
-        pass
+        ...
 
     def test_status_is_0_by_defaul(self):
         """A Post has status 0 by default."""
